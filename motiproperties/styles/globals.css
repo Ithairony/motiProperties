@@ -1,0 +1,548 @@
+/* General reset and styling */
+/* 
+   Ensures the page uses the full height of the viewport and prevents horizontal scrolling. 
+   It also hides any horizontal overflow, making the layout more mobile-friendly.
+*/
+html,
+body {
+  height: 100%; /* Full height for the body */
+  max-width: 100vw; /* Prevent horizontal scrolling */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Body styling */
+/* 
+   Sets text color, background color, font, and margin. Also adds a padding-top 
+   to account for a fixed navbar.
+*/
+body {
+  color: #111827; /* Set text color */
+  background-color: var(--background); /* Background color from a CSS variable */
+  font-family: Arial, Helvetica, sans-serif; /* Font family */
+  padding-top: 60px; /* Space for fixed navbar */
+  margin: 0; /* Remove margin */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Universal box-sizing, padding, and margin reset */
+/* 
+   Applies box-sizing to all elements so padding and border are included in the element's total width/height.
+   Also resets padding and margin to 0 on all elements.
+*/
+* {
+  box-sizing: border-box; /* Includes padding and border in width/height */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+/* Anchor tag styling */
+/* 
+   Removes underline from all links and makes them inherit the text color from their parent element.
+*/
+a {
+  color: inherit; /* Inherit text color */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Form container styles */
+/* 
+   Adds a beige background, sets text color to black, and applies padding, box-shadow, and border radius 
+   for a nice card-like appearance for forms.
+*/
+.form, .apply-form {
+  background-color: beige; /* Set background to beige */
+  color: black; /* Set text color to black */
+  border-radius: 10px; /* Rounded corners */
+  box-sizing: border-box; /* Ensures padding and border are considered in width/height */
+  padding: 20px; /* Padding inside the form */
+  width: 320px; /* Fixed width for the form */
+  box-shadow: 3px 3px #1e1e801a; /* Subtle shadow for the form */
+  border: 1px solid #ccddf1; /* Light border */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect for transform and shadow */
+}
+
+/* Form wrapper styles */
+/* 
+   Centers the form on the page with flexbox.
+*/
+.form-wrapper {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: 50px; /* Margin on top */
+  padding: 20px; /* Padding around the form */
+}
+
+/* Form hover effect */
+/* 
+   Slightly enlarges the form and adds a stronger shadow when hovered.
+*/
+.form:hover {
+  transform: scale(1.03); /* Slightly enlarge the form */
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+/* Header styling */
+/* 
+   Centers the header text, sets font size, color, and margin-bottom.
+*/
+h1 {
+  text-align: center; /* Center the header */
+  font-size: 2em; /* Font size */
+  color: #1e7e34; /* Green color */
+  margin-bottom: 15px; /* Space below the header */
+}
+
+/* Label styling */
+/* 
+   Makes labels block-level, bold, and aligned to the left with a margin above.
+*/
+label {
+  display: block; /* Block-level for labels */
+  margin-top: 10px; /* Space above the label */
+  font-weight: bold; /* Bold text */
+  text-align: left; /* Align label to the left */
+  width: 100%; /* Take full width */
+}
+
+/* Input and select field styling */
+/* 
+   Sets the background color, text color, border, padding, and border-radius for input and select elements.
+   Also adds transition for focus state.
+*/
+input, select {
+  background-color: #fff; /* White background */
+  color: #1a1f36; /* Dark text color */
+  border: 1px solid #ccc; /* Light border */
+  padding: 10px; /* Padding inside the field */
+  border-radius: 4px; /* Rounded corners */
+  margin-top: 8px; /* Space above the field */
+  transition: border-color 0.2s; /* Smooth transition for focus */
+}
+
+/* Input and select focus state */
+/* 
+   Changes border color when the input/select is focused.
+*/
+input:focus,
+select:focus {
+  border-color: #1e7e34; /* Green border */
+  outline: none; /* Remove default outline */
+}
+
+/* Button styling */
+/* 
+   Defines button styles, including size, padding, color, and border.
+*/
+button {
+  width: 50%; /* Full width of form */
+  margin-top: 5px; /* Space above the button */
+  background: green; /* Green background */
+  border: 1px solid green; /* Green border */
+  border-radius: 5px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding in width/height calculation */
+  color: #FFFFFF; /* White text */
+  display: inline-block; /* Inline display */
+  padding: 12px 14px; /* Padding inside button */
+  text-align: center; /* Center text inside button */
+  vertical-align: middle; /* Align vertically */
+}
+
+/* Button hover effect */
+/* 
+   Changes background color to a darker green on hover.
+*/
+button:hover {
+  background: #218838; /* Darker green on hover */
+}
+
+/* Button active state */
+/* 
+   Changes background color to an even darker green when the button is clicked.
+*/
+button:active {
+  background-color: #1e7e34; /* Even darker green */
+}
+
+/* Disabled button styles */
+/* 
+   Adds a disabled state with a lighter background and a "not allowed" cursor.
+*/
+button:disabled {
+  background-color: #218838; /* Disabled color */
+  cursor: not-allowed; /* Indicate button can't be clicked */
+}
+
+/* Button Container */
+/* 
+   Creates a flex container for the search button, arranging them with space in between.
+*/
+.search-button-container {
+  display: flex; /* Use flexbox */
+  gap: 15px; /* Space between buttons */
+  justify-content: space-evenly; /* Even space distribution */
+  align-items: center; /* Center buttons vertically */
+}
+
+/* Search button specific styles */
+/* 
+   Styles for the search button, including padding, border, shadow, and cursor style.
+*/
+button.search-button {
+  background-color: #FFFFFF; /* White background */
+  border: 0.5px; /* Thin border */
+  border-radius: .5rem; /* Rounded corners */
+  box-sizing: border-box; /* Include padding in width/height */
+  color: #111827; /* Dark text color */
+  font-size: .875rem; /* Font size */
+  font-weight: 600; /* Semi-bold text */
+  line-height: 1.25rem; /* Line height */
+  padding: .75rem 1rem; /* Padding inside button */
+  text-align: center; /* Center text */
+  text-decoration: none #D1D5DB solid; /* Border color */
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Shadow */
+  cursor: pointer; /* Pointer cursor */
+}
+
+/* Search button hover effect */
+/* 
+   Changes background color on hover.
+*/
+button.search-button:hover {
+  background-color: rgb(249,250,251); /* Light background */
+}
+
+/* Search button focus state */
+/* 
+   Adds a focus outline when the button is focused.
+*/
+button.search-button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* Search button focus-visible state */
+/* 
+   Removes the box shadow when the button is focused with visible focus.
+*/
+button.search-button:focus-visible {
+  box-shadow: none;
+}
+
+/* Content section styling */
+/* 
+   Adds top padding and ensures content fills the screen width.
+*/
+.content {
+  padding-top: 60px; /* Space for navbar */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Gallery container styling */
+/* 
+   Makes the gallery a flex container, wrapping items with space between them.
+*/
+.gallery {
+  display: flex; /* Flex container */
+  flex-wrap: wrap; /* Wrap items onto new lines */
+  width: 100%; /* Full width */
+  justify-content: space-evenly; /* Evenly distribute space */
+  gap: 20px; /* Space between items */
+  color: black; /* Text color */
+  padding: 40px; /* Padding inside gallery */
+}
+
+/* Card container styling */
+/* 
+   Defines the appearance of the card element, including its size, shadow, and transition effects.
+*/
+.card {
+  background: white; /* White background */
+  margin: 10px; /* Margin around the card */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 1px 1px #1e1e801a; /* Shadow for depth */
+  width: 30%; /* Set card width */
+  min-width: 200px; /* Minimum width */
+  margin: .5em; /* Small margin */
+  flex-grow: 2; /* Allow card to grow in flex container */
+  transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+  display: flex; /* Flex layout */
+  flex-direction: column; /* Column layout */
+  justify-content: center; /* Vertically center content */
+  align-items: center; /* Horizontally center content */
+  text-align: center; /* Center text */
+}
+
+/* Card button styling */
+/* 
+   Styles the button inside the card, making it full width with padding and text centered.
+*/
+.card button {
+  background-color: #218838; /* Green background */
+  border: none; /* Remove default border */
+  color: white; /* White text */
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding inside button */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+}
+/* Card hover effect */
+/* 
+   Enlarges the card slightly when hovered, changes the cursor to a pointer, 
+   and applies a light background color.
+*/
+.card:hover {
+  transform: scale(1.03); /* Slightly enlarges the card */
+  cursor: pointer; /* Change cursor to pointer */
+  background-color: #f7f7f7; /* Light background color */
+}
+
+/* Image styling inside the card */
+/* 
+   Adds rounded top corners to the image, ensures it scales with the card's width, 
+   maintains the aspect ratio, and prevents extra space below the image.
+*/
+img {
+  border-top-left-radius: 5px; /* Rounded top-left corner */
+  border-top-right-radius: 5px; /* Rounded top-right corner */
+  max-width: 100%; /* Make images scale with the width of the card */
+  height: auto; /* Maintain the aspect ratio */
+  display: block; /* Prevents images from being inline and leaving space below */
+  margin-bottom: 10px; /* Adds space below the image */
+  object-fit: cover; /* Ensures the image covers the area of the container */
+}
+
+/* Navbar styles */
+/* 
+   Uses flexbox to align items horizontally, applies padding and a dark background 
+   to the navbar, and makes it fixed at the top of the page.
+*/
+.nav {
+  display: flex; /* Flexbox layout for horizontal positioning */
+  justify-content: space-between; /* Space between logo and links */
+  align-items: center; /* Vertically align items in the center */
+  padding: 15px 10px; /* Add padding to the navbar */
+  background-color: #333; /* Dark background for the navbar */
+  color: white; /* White text color */
+  position: fixed; /* Make navbar fixed at the top */
+  top: 0; /* Fixed to the top */
+  left: 0; /* Align left */
+  right: 0; /* Align right */
+  z-index: 100; /* Ensure it stays above other content */
+  height: 40px; /* Fixed height */
+}
+
+/* Navbar Links */
+.nav .nav-links {
+  display: flex; /* Flex container for navbar links */
+  list-style-type: none; /* Removes bullets from list */
+  margin: 0; /* Removes margin */
+  padding: 0; /* Removes padding */
+}
+
+/* Individual list items in navbar */
+nav .nav-links li {
+  margin: 20px; /* Margin between each list item */
+}
+
+/* Navbar link styling */
+/* 
+   Sets the text color, removes the underline, and applies a transition effect
+   when hovering over the links.
+*/
+.nav a {
+  color: white; /* White text color */
+  text-decoration: none; /* Remove underline */
+  margin: 0px 5px; /* Horizontal margin for spacing */
+  font-size: 1.1rem; /* Font size for links */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Navbar link hover effect */
+/* 
+   Changes the color of the navbar links when hovered.
+*/
+.nav a:hover {
+  color: #f39c12; /* Changes color to yellow/orange on hover */
+}
+
+/* SearchBar container styling */
+/* 
+   Adds a white background, padding, margin, border-radius, and shadow for the search bar.
+   Also defines the width and display as flexbox with vertical alignment.
+*/
+.searchBar {
+  background-color: white; /* White background */
+  padding: 5px; /* Padding inside the search bar */
+  margin: 5px auto; /* Center horizontally with auto margin */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow around the search bar */
+  width: 90%; /* Take up 90% of the width */
+  max-width: 1200px; /* Max width for large screens */
+  text-align: center; /* Center text inside */
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Arrange items vertically */
+  gap: 15px; /* Space between items */
+}
+
+/* Filter container styling */
+/* 
+   Displays filter options in a row, with wrapping and spacing.
+*/
+.filter-container {
+  display: flex; /* Flexbox layout */
+  justify-content: flex-start; /* Align to the left */
+  gap: 10px; /* Space between filter options */
+  width: 100%; /* Full width */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  margin-bottom: 20px; /* Margin below the filters */
+  align-items: center; /* Align vertically */
+  justify-content: center; /* Center the content */
+}
+
+/* Styling for input fields (select and input) in filter options */
+/* 
+   Applies padding, font size, width, and border radius to filter options.
+   Includes a transition effect for smooth styling changes.
+*/
+.filter-option {
+  padding: 12px; /* Padding inside input fields */
+  font-size: 16px; /* Font size */
+  width: 200px; /* Fixed width for inputs */
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid white; /* White border */
+  box-sizing: border-box; /* Includes padding and border in width calculation */
+  transition: all 0.3s ease; /* Smooth transition for border and box-shadow */
+}
+
+/* Hover and focus effect for filter inputs */
+/* 
+   Changes the border color and adds a shadow effect when hovering or focusing.
+*/
+.filter-option:hover,
+.filter-option:focus {
+  border-color: #218838; /* Green border */
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.3); /* Blue shadow */
+}
+
+/* Footer styling */
+/* 
+   Sets a green background color, white text, and padding for the footer.
+*/
+.footer {
+  margin-top: 200px; /* Adds space above the footer */
+  width: 100%; /* Full width */
+  background-color: #1e7e34; /* Green background */
+  color: white; /* White text color */
+  padding: 30px 20px; /* Padding inside the footer */
+  font-family: Arial, sans-serif; /* Font family */
+}
+
+/* Footer top section */
+/* 
+   Uses flexbox to arrange footer sections horizontally with wrapping.
+*/
+.footer-top {
+  display: flex; /* Flexbox layout */
+  justify-content: space-around; /* Space sections evenly */
+  flex-wrap: wrap; /* Wrap sections on smaller screens */
+  gap: 10px; /* Space between sections */
+}
+
+/* Footer section styling */
+/* 
+   Limits the maximum width of each section to 300px for better layout.
+*/
+.footer-section {
+  max-width: 300px; /* Max width */
+}
+
+/* Footer section heading styling */
+.footer-section h3 {
+  margin-bottom: 10px; /* Space below the heading */
+  font-size: 1.2rem; /* Font size for headings */
+}
+
+/* Footer section paragraph and address styling */
+.footer-section p,
+.footer-section address {
+  font-size: 0.95rem; /* Smaller font size */
+  line-height: 1.5; /* Line height for better readability */
+}
+
+/* Footer bottom section */
+/* 
+   Adds a margin on top, centers the text, and adds a border at the top.
+*/
+.footer-bottom {
+  margin-top: 30px; /* Space above the footer bottom */
+  text-align: center; /* Center the text */
+  font-size: 0.9rem; /* Smaller font size */
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Light border on top */
+  padding-top: 20px; /* Padding above the text */
+}
+
+/* Welcome section wrapper */
+.welcome-wrapper {
+  background-color: #f9fafb; /* Light background color */
+}
+
+/* Welcome content styling */
+.welcome-content {
+  max-width: 800px; /* Max width */
+  margin: 0 auto; /* Center content horizontally */
+  text-align: center; /* Center the text */
+}
+
+/* Welcome content header styles */
+.welcome-content h1 {
+  font-size: 50px; /* Large font size for the main header */
+}
+
+/* Welcome content subheader styling */
+.welcome-content h2 {
+  font-size: 30px; /* Smaller font size for subheader */
+  margin-top: 30px; /* Space above */
+  margin-bottom: 10px; /* Space below */
+}
+
+/* Welcome paragraph styling */
+.welcome-content p {
+  font-size: 20px; /* Font size for the paragraph */
+}
+
+/* Testimonials section styling */
+/* 
+   Adds padding, background color, and a border-left to the testimonials section.
+*/
+.testimonials {
+  max-width: 700px; /* Max width */
+  margin: 50px auto; /* Center content horizontally */
+  padding: 20px; /* Padding inside */
+  background-color: beige; /* Beige background */
+  border-left: 4px solid #1e7e34; /* Green left border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* Testimonials section heading styling */
+.testimonials h2 {
+  text-align: center; /* Center the header */
+  margin-bottom: 20px; /* Space below */
+}
+
+/* Blockquote styling in testimonials */
+/* 
+   Adds margin, italic font style, and a left border to blockquotes.
+*/
+.testimonials blockquote {
+  margin: 20px 0; /* Margin above and below */
+  font-style: italic; /* Italic text style */
+  border-left: 3px solid #f39c12; /* Orange left border */
+  padding-left: 15px; /* Space inside the left border */
+}
