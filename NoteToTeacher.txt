@@ -1,0 +1,12 @@
+Hey Ellen,
+
+I hope you're doing well!
+
+I just wanted to let you know that I’ve spent quite a bit of time trying to figure out why the navbar isn’t recognizing the website cookies—and I still haven’t figured out why it’s only the navbar that doesn’t seem to read them. My goal was to make the navbar dynamically adjust based on the user, but this issue slowed me down and caused me to fall behind on completing some of the pages.
+
+I also had to manually adjust the propertyID and landlordID in the database to get some other parts working, though my intention was to make everything function dynamically. I’ll definitely keep working on it, as this has really intrigued me and I want to get it right.
+
+Thanks for your understanding!
+
+Best regards,
+Igor Thairony
